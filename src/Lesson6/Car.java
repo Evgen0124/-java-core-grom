@@ -5,7 +5,7 @@ package Lesson6;
  */
 public class Car {
 
-// test git
+
     int price;
     int yearOfManufacturing;
     String color;
