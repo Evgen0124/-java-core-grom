@@ -6,24 +6,31 @@ import java.util.Date;
  * Created by user on 18.07.2017.
  */
 public abstract class Order {
-  private   String itemName;
-   private Date dateCreated;
-   private Date dateConfirmed;
-   private Date dateShipped;
-   private String shipToCity;
-   private int basePrice;
-   private double totalPrice;
-   private Customer customerOwner;
+    private String itemName;
+    private Date dateCreated;
+    private Date dateConfirmed;
+    private Date dateShipped;
+    private String shipToCity;
+    private int basePrice;
+    private double totalPrice;
+    private Customer customerOwned;
 
-    public Order(Date dateConfirmed, Date dateShipped, double totalPrice) {
-        this.dateConfirmed = dateConfirmed;
-        this.dateShipped = dateShipped;
-        this.totalPrice = totalPrice;
+    public Order(String itemName, Date dateCreated, String shipToCity, int basePrice, Customer customerOwned) {
+        this.itemName = itemName;
+        this.dateCreated = dateCreated;
+        this.shipToCity = shipToCity;
+        this.basePrice = basePrice;
+        this.customerOwned = customerOwned;
     }
+
     abstract void validateOrder();
-    abstract  void  calculatePrice();
-    void  confirmShipping(){
-        dateShipped = new Date();
+
+    abstract void calculatePrice();
+
+    void confirmShipping() {
+        if (dateShipped == null) {
+            dateShipped = new Date();
+        }
     }
 
     public String getItemName() {
@@ -34,6 +41,14 @@ public abstract class Order {
         return dateCreated;
     }
 
+    public Date getDateConfirmed() {
+        return dateConfirmed;
+    }
+
+    public Date getDateShipped() {
+        return dateShipped;
+    }
+
     public String getShipToCity() {
         return shipToCity;
     }
@@ -42,28 +57,20 @@ public abstract class Order {
         return basePrice;
     }
 
-    public Customer getCustomerOwner() {
-        return customerOwner;
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public Date getDateConfirmed() {
-        return dateConfirmed;
+    public Customer getCustomerOwned() {
+        return customerOwned;
     }
 
     public void setDateConfirmed(Date dateConfirmed) {
         this.dateConfirmed = dateConfirmed;
     }
 
-    public Date getDateShipped() {
-        return dateShipped;
-    }
-
     public void setDateShipped(Date dateShipped) {
         this.dateShipped = dateShipped;
-    }
-
-    public double getTotalPrice() {
-        return totalPrice;
     }
 
     public void setTotalPrice(double totalPrice) {

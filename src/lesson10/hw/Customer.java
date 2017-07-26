@@ -4,9 +4,9 @@ package lesson10.hw;
  * Created by user on 18.07.2017.
  */
 public class Customer {
-    String name;
-    String city;
-    String gender;
+    private String name;
+    private String city;
+    private String gender;
 
     public Customer(String name, String city, String gender) {
         this.name = name;
@@ -23,6 +23,6 @@ public class Customer {
     }
 
     public String getGender() {
-        return gender;
-    }
+        return gender;}
+
 }
