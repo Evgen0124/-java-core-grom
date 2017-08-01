@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by user on 25.07.2017.
  */
-public class FurnitureOrder extends  Order{
+public class FurnitureOrder extends Order {
     private String furnitureCode;
 
     public FurnitureOrder(String itemName, Date dateCreated, String shipToCity, int basePrice,
@@ -18,10 +18,10 @@ public class FurnitureOrder extends  Order{
 
     @Override
     public void validateOrder() {
-        if((getCustomerOwned().getCity().equals("Киев") || getCustomerOwned().getCity().equals("Львов"))
+        if ((getCustomerOwned().getCity().equals("Киев") || getCustomerOwned().getCity().equals("Львов"))
                 && getBasePrice() >= 500 && !(getCustomerOwned().getName().equals("Тест"))
                 && (getCustomerOwned().getGender().equals("Мужской") ||
-                getCustomerOwned().getGender().equals("Женский"))){
+                getCustomerOwned().getGender().equals("Женский"))) {
             setDateConfirmed(new Date());
         } else {
             setDateConfirmed(null);
@@ -31,7 +31,7 @@ public class FurnitureOrder extends  Order{
     @Override
     public void calculatePrice() {
         double totalPrice;
-        if(getBasePrice() < 5000){
+        if (getBasePrice() < 5000) {
             totalPrice = getBasePrice() * 1.05;
         } else {
             totalPrice = getBasePrice() * 1.02;
