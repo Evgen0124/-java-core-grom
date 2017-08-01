@@ -7,7 +7,7 @@ public interface DbProvider {
 
      void  connectToDb();
     void disconnectFromDb();
-      void  encrypttData();
+      void  encryptData();
 
 }
 

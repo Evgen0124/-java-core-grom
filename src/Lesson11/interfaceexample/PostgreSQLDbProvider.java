@@ -15,7 +15,7 @@ public class PostgreSQLDbProvider implements DbProvider {
  }
 
  @Override
- public void encrypttData() {
+ public void encryptData() {
 
  }
 }
