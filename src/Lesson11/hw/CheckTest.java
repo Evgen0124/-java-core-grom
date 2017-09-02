@@ -1,0 +1,29 @@
+package Lesson11.hw;
+
+/**
+ * Created by user on 20.08.2017.
+ */
+public class CheckTest {
+    public static void main(String[] args) {
+        int[] mas1 = {};
+        int[] mas2 = {87,76,389,10, 89,100};
+        check(mas1, mas2);
+
+    }
+    public  static int[] check(int[] mas1, int[] mas2){
+
+        if(mas1.length == 0 || mas2.length == 0){
+            return null;
+        }
+        int[] res = new int[mas1.length];
+        for (int i = 0; i <mas1.length ; i++) {
+            for (int j = 0; j < mas2.length; j++) {
+                if(mas1[i] == mas2[j]) {
+                    res[i] = mas1[i];
+                    System.out.print(res[i] + " ");
+                }
+            }
+        }
+        return res;
+    }
+}
