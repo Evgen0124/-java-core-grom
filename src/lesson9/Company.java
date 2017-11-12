@@ -4,8 +4,8 @@ package lesson9;
  * Created by user on 06.07.2017.
  */
 public class Company {
-  private   String name;
-  private   String countryFounded;
+    String name;
+   String countryFounded;
 
     protected  String code;
     public  int someField;
