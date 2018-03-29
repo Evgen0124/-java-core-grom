@@ -9,7 +9,7 @@ public class Ad extends BaseEntity {
     int price;
     Date dateCreated;
 
-    public Ad(int price, long id, Date dateCreated) {
+    public Ad(int price, long id) {
         super(id);
         this.price = price;
         this.dateCreated = new Date();
